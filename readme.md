@@ -12,13 +12,12 @@ This project defines the recommendation problem as:
 
 > **Given a user’s chapter interaction history, recommend the next chapter they are most likely to read.**
 
-This is a deliberate and practical interpretation of the assignment because recommending the next chapter is one of the explicitly suggested directions, and it aligns closely with the dataset structure.
 
 ---
 
 ## Dataset Schema
 
-The solution is built using only the provided files, in line with the assignment constraint that no external data sources should be used.
+The solution is built using only the provided files.
 
 ### `chapters.csv`
 Contains chapter metadata with the following columns:
@@ -45,7 +44,7 @@ This project treats the task as a **chapter-level sequential recommendation prob
 
 ### Why this framing?
 
-- Chapters belong to books and follow a natural reading order. [file:2]
+- Chapters belong to books and follow a natural reading order.
 - If a user has already read chapter \(n\), the next strong candidate is often chapter \(n+1\).
 - User preferences such as author affinity and tag affinity can help rank candidates when multiple reading paths are possible.
 - A simple, interpretable sequential baseline is a strong fit for a time-constrained assignment where practical thinking matters more than unnecessary complexity.
@@ -294,7 +293,7 @@ This project intentionally uses a **modular, interpretable baseline** rather tha
 
 1. The assignment expects practical thinking and tradeoff awareness, not unnecessary complexity.
 2. The dataset structure strongly favors a sequence-aware solution because chapter order is central to the problem.
-3. A clean, reproducible, well-evaluated baseline is more valuable in a 4–6 hour assignment setting than a partially finished advanced model. [file:2]
+3. A clean, reproducible, well-evaluated baseline is more valuable.
 
 ### What was prioritized
 - Strong alignment with the assignment goal.
@@ -322,7 +321,6 @@ While the current system is a solid baseline, it has a few limitations:
 - It focuses on **next chapter** recommendation rather than **new book** recommendation.
 - It uses rule-based / weighted ranking instead of learned ranking.
 
-These are acceptable limitations for the assignment’s time and scope, but they also point directly to meaningful next steps.
 ---
 
 ## Future Improvements
@@ -338,18 +336,6 @@ Given more time, the following extensions would be valuable:
 
 ---
 
-## Why This Project Is a Good Fit for the Assignment
-
-This solution is intentionally designed to match the assignment’s core expectations:
-
-- It builds a recommendation system from user reading history. 
-- It uses the sequential nature of chapters directly, which is a key requirement implied by the dataset. 
-- It includes evaluation and measurable outputs.
-- It keeps the code clean, readable, modular, and reproducible.
-- It clearly reflects practical tradeoffs rather than overengineering. 
-
----
-
 ## Tech Stack
 
 - Python
@@ -361,6 +347,3 @@ This solution is intentionally designed to match the assignment’s core expecta
 
 ---
 
-## Submission Note
-
-This repository contains the full code, project structure, and evaluation pipeline for a chapter-level sequential recommendation baseline. The implementation is intentionally scoped to produce a clean, interpretable, and reproducible solution within the assignment constraints while remaining aligned to the dataset’s strongest signal: **reading progression within books**.
